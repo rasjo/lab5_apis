@@ -1,0 +1,38 @@
+<html>
+<head>  
+	<title>Instagram Posts Around The Eiffel Tower</title>  
+	
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>  
+	<link rel="stylesheet" href="Leaflet.Instagram/dist/Leaflet.Instagram.css"/>  
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>  
+
+</head>
+
+	<style>body{background:ffffff; font-size: 30;}</style>
+
+<body> 
+<center>
+instagram in the philippines
+
+<div id="map" style="height:900px; width:1000px"></div>
+
+<center>
+	
+<script src="http://gus8068spr16.github.io/reqwest.min.js"></script> 
+<script src="http://gus8068spr16.github.io/Leaflet.Instagram/dist/Leaflet.Instagram.js"></script> 
+
+<script> 
+	var map = L.map('map').setView([121.0024108, 6.0512823], 15); 
+	var at = '11ab9ea3737840ac9f8b5e6d69152462'; 
+	var url = "https://api.instagram.com/v1/media/search?lat=121.0024108&lng=6.0512823&access_token="+at;
+ 
+	L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
+		{   
+	attribution: 'Map data <a href="http://openstreetmap.org">OpenStreetMap</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',   
+		maxZoom: 16,   
+		minZoom: 12 
+		}).addTo(map); 
+		L.instagram(url).addTo(map); 
+</script>
+</body>
+</html>
